@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <script src="{{url_for('static',filename='js/evit.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}" />
+    <link rel="icon" href="{{url_for('static',filename='img/login.jpg')}}" />
+  </head>
+  <body class="bg-info">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <div class="text-center bg-light">
+      <img src="{{url_for('static',filename='img/encabezado.jpg')}}" class="img-fluid w-50" />
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                ><button type="button" class="btn btn-light">INICIO</button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/comfunci.html"
+                ><button type="button" class="btn btn-light">
+                  COMO FUNCIONA
+                </button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/soporte.html"
+                ><button type="button" class="btn btn-light">SOPORTE</button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/login.html"
+                ><button type="button" class="btn btn-secondary">
+                  INICIAR SESION
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container bg-light">
+      <br />
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="parrafo1">
+            El Hospital Departamental Juan Domínguez Romero de Soledad ESE, Con
+            NIT 802009766-3, con domicilio en el Municipio de SOLEDAD,
+            Departamento del Atlántico en la calle 15 número 21-60, es una
+            entidad descentralizada de naturaleza especial del orden
+            Departamental de Segundo Nivel de Complejidad que se constituyó como
+            E.S.E. mediante ordenanza No. 00087 del 17 de diciembre de 1.998
+            proferida por la Honorable Asamblea Departamental del Atlántico, la
+            E.S.E. puede ofrecer y contratar servicios de salud con entidades
+            territoriales Nación, Departamentos, Municipios, Distritos, Empresas
+            Públicas y Privadas de cualquier naturaleza acorde a Resolución
+            004688 de 23-12-08 de la Secretaria de Salud del Dpto. del Atlántico
+            que certifica el cumplimiento de Estándares de Calidad del Sistema
+            de Habilitación.
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="text-center">
+            <img src="{{url_for('static',filename='img/hosp.jpg')}}" />
+          </div>
+        </div>
+      </div>
+      <br />
+      <script>
+        window.addEventListener('load', function(){
+            var imagenes=[];
+            imagenes[0]="{{url_for('static',filename='img/covid19-1.png')}}";
+            imagenes[1]="{{url_for('static',filename='img/covid19-2.png')}}";
+            imagenes[2]="{{url_for('static',filename='img/covid19-3.png')}}";
+            imagenes[3]="{{url_for('static',filename='img/covid19-4.png')}}";
+            imagenes[4]="{{url_for('static',filename='img/covi-19_1.png')}}";
+            var i=0;
+            function cambiar(){
+                document.hola.src=imagenes[i];
+                if(i<4){
+                    i++;
+                }else{
+                    i=0;
+                }
+            }
+            setInterval(cambiar,3000);
+        })
+      </script>
+      <br />
+      <div class="row">
+        <div class="text-center">
+          <h1>COVID-19</h1>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-center bg-light">
+            <div></div>
+            <img name="hola" class="img-fluit w-100" />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <br />
+          La enfermedad por coronavirus (COVID-19) es una enfermedad infecciosa
+          provocada por el virus SARS-CoV-2. La mayoría de las personas que
+          padecen COVID-19 sufren síntomas de intensidad leve a moderada y se
+          recuperan sin necesidad de tratamientos especiales. Sin embargo,
+          algunas personas desarrollan casos graves y necesitan atención médica.
+          <br /><br />
+          Los síntomas más habituales son los siguientes: <br /><br />
+          <b>1.</b> Fiebre. <br />
+          <b>2.</b> Tos. <br />
+          <b>3.</b> Cansancio. <br />
+          <b>4.</b> Pérdida del gusto o del olfato. <br /><br />
+          Los síntomas menos habituales son los siguientes: <br /><br />
+          <b>1.</b> Dolor de garganta.<br />
+          <b>2.</b> Dolor de cabeza.<br />
+          <b>3.</b> Molestias y dolores.<br />
+          <b>4.</b> Diarrea.<br />
+          <b>5.</b> Erupción cutánea o pérdida del color de los dedos de las
+          manos o los pies.<br />
+          <b>6.</b> Ojos rojos o irritados.<br />
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 text-center">
+          <div class="ratio ratio-16x9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/biOnV5-LDhE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <br />
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 text-center">
+          <div class="ratio ratio-16x9">
+            <iframe
+              class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.615611069479!2d-74.76527568519802!3d10.916789692226347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef5cd715e583f05%3A0xbada2f598370299d!2sHospital%20Departamental%20Juan%20Dom%C3%ADnguez%20Romero%20de%20Soledad!5e0!3m2!1ses-419!2sco!4v1644871501245!5m2!1ses-419!2sco"
+              width="90%"
+              height="400px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+      <br />
+      <br />
+    </div>
+    <footer class="text-center text-lg-start bg-secondary text-light">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-6 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Hospital departamental Juan
+                dominges romero
+              </h6>
+              <p>
+                El Hospital Departamental Juan Domínguez Romero de Soledad ESE,
+                Con NIT 802009766-3, con domicilio en el Municipio de SOLEDAD
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-6 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p>
+                <i class="fas fa-home me-3"></i> Cl. 15 #2160, Soledad,
+                Atlántico
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                JuanDomínguez@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> Telefono: +57 3145410393</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2022 Copyright
+      </div>
+    </footer>
+  </body>
+</html>
