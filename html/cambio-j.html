@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de cambio</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../js/evir.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <script src="../js/cerrar.js"></script>
+        <script src="../js/cambio.js"></script>
+        <link rel="icon" href="../img/login.jpg">
+        <title></title>
+        <style type="text/css">
+            #estado{
+                display: none;
+            }
+        </style>
+    </head>
+    <body class="bg-info">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+            <div class="text-center  bg-light">
+                <img src="../img/encabezado.jpg" class="img-fluit w-50">
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-success">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pesonal-j.html"><button type="button" class="btn btn-light">Usuario</button></a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="cambio-j.html"><button type="button" class="btn btn-light">Solicitar cambio</button></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Solicitar-nuevo empleado.html"><button type="button" class="btn btn-light">Solicitar nuevo empleado</button></a>
+                                </li>
+                            <li class="nav-item">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="consultas-j.html"><button type="button" class="btn btn-light">Consultas generales</button></a>
+                                    </li>
+                                <li class="nav-item">
+                            <a class="nav-link"><button type="button" onclick="Oper2()" class="btn btn-danger">CERRAR SESION</button></a>
+                            </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        <div class="container bg-light">  
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <section>
+                        <div class="Formulario">
+                            <h1>Formulario de Cambio</h1>
+                            <br>
+                            <form>
+                                <label for="Cambio">Seleccione que desea cambiar:</label>
+                                <select class="form-select" id="solit" onchange="funcionA()">
+                                    <option>Selecione</option>
+                                    <option value="Ipersonal">Cambio de informacion personal</option>
+                                    <option value="Eempleado">Cambio de estado del empleado</option>
+                                </select>
+                                <br>
+                                    <h4>Informacion Del Jefe</h4>
+                                <br>
+                                <div id="principal">
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form6Example1">Nombres</label>
+                                                <input type="text" id="nombreS" class="form-control" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline"> <label class="form-label"
+                                                    for="form6Example2">Apellidos</label>
+                                                <input type="text" id="apellidoS" class="form-control" disabled/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form6Example5">Correo Electronico</label>
+                                        <input type="email" id="emailS" class="form-control" disabled/>
+                                    </div>
+                                    
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form6Example6">Telefono</label>
+                                        <input type="number" id="cellS" class="form-control"disabled/>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form6Example7">Motivo de su sulicitud</label>
+                                        <textarea class="form-control" id="solicitudS" rows="4"></textarea>
+                                    </div>
+                                
+                                    <br>
+                                    <button type="button" onclick="EnviarSJ()" class="btn btn-primary btn-block mb-4">Enviar</button>
+                                </div>
+                                <div id="estado"> 
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form6Example1">Nombres</label>
+                                                <input type="text" id="nombreSA" class="form-control" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline"> <label class="form-label"
+                                                    for="form6Example2">Apellidos</label>
+                                                <input type="text" id="apellidoSA" class="form-control" disabled/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form6Example5">Correo Electronico</label>
+                                        <input type="email" id="emailSA" class="form-control" disabled/>
+                                    </div>
+                                    
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form6Example6">Telefono</label>
+                                        <input type="number" id="cellSA" class="form-control"disabled/>
+                                    </div>
+                                    <br>
+                                    <h4>Informacion Del Empleado a Buscar</h4>
+                                    <br>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form6Example2">N° de identificacion</label>
+                                                <input type="text" id="ID_cedula" class="form-control" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-5">
+                                            <div class="form-outline">
+                                                <br>
+                                                <button type="button" onclick="BuscarE()" class="btn btn-primary btn-block mb-4">Buscar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                        <div class="form-outline">
+                                            <label class="form-label"
+                                             for="form6Example2">Estado del empleado</label>
+                                            <input type="text" id="EstadoEmpleadoS" class="form-control" disabled/>
+                                        </div>
+                                        
+                                        <div class="row mb-4">
+                                            <div class="col">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form6Example1">Nombres</label>
+                                                    <input type="text" id="nombreSE" class="form-control" disabled/>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-outline"> <label class="form-label"
+                                                        for="form6Example2">Apellidos</label>
+                                                    <input type="text" id="apellidoSE" class="form-control" disabled/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form6Example5">Correo Electronico</label>
+                                            <input type="email" id="emailSE" class="form-control" disabled/>
+                                        </div>
+                                        
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form6Example6">Telefono</label>
+                                            <input type="number" id="cellSE" class="form-control" disabled/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form6Example7">Motivo de su sulicitud</label>
+                                            <textarea class="form-control" id="solicitudSE" rows="4"></textarea>
+                                        </div>
+                                        <br>
+                                        <button type="button" onclick="EnviarSE()" class="btn btn-primary btn-block mb-4">Enviar</button>
+                                    
+                                </div>
+                                
+                            </form>
+                            <script type="text/javascript">
+                                function funcionA() {
+                                    var varibale=document.getElementById("solit").value;
+                                    if(varibale=="Eempleado"){
+                                        document.getElementById('estado').style.display = 'block';
+                                        document.getElementById('principal').style.display = 'none';
+                                    }else if(varibale=="Ipersonal"){
+                                        document.getElementById('estado').style.display = 'none';
+                                        document.getElementById('principal').style.display = 'block';
+                                    }
+                                }
+                                
+                            </script>
+                        </div>      
+                    </section>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    <b><h3>Inicio</h3></b>
+                    <p>El Hospital Departamental Juan Domínguez Romero de Soledad ESE, Con NIT 802009766-3, con domicilio en el Municipio de SOLEDAD, Departamento del Atlántico... Para más información da clic <a href="../index.html">aqui.</a></p>
+                    <a href="../index.html"><img class="imghospital" src="../img/inicio_1.jpeg" alt="" width="350px" height="200px"></a>
+                    <br>
+                    <b><h3>Soporte</h3></b>
+                    <p>Si encuentras erorres en la paguina, tomar evidencias del error y enviarlo para resolver. Para más información da clic <a href="soporte.html">aqui.</a></p>
+                    <a href="soporte.html"><img class="imghospital" src="../img/soporte.jpg" alt="" width="350px" height="200px"></a>              
+                </div>  
+            </div>        
+        </div>
+        <footer class="text-center text-lg-start bg-secondary text-light">
+
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+    
+                <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+    
+            </section>
+    
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+    
+                    <div class="row mt-3">
+    
+                        <div class="col-md-3 col-lg-6 col-xl-3 mx-auto mb-4">
+    
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>Hospital departamental Juan dominges romero
+                            </h6>
+                            <p>
+                                El Hospital Departamental Juan Domínguez Romero de Soledad ESE, Con NIT 802009766-3, con
+                                domicilio en el Municipio de SOLEDAD
+                            </p>
+                        </div>
+    
+                        <div class="col-md-4 col-lg-6 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <p><i class="fas fa-home me-3"></i> Cl. 15 #2160, Soledad, Atlántico</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                JuanDomínguez@gmail.com
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> Telefono: +57 3145410393</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2021 Copyright
+                <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+            </div>
+        </footer>
+    </body>
+</html>
